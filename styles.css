@@ -1,29 +1,89 @@
-/* Style for body with background image */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    margin: 50px;
     font-family: Arial, sans-serif;
-    background-image: url('images/aspire-africa.jpg'); /* Path to your background image */
+    background-image: url('aspire-africa.jpg'); /* Path to your background image */
     background-size: cover; /* Ensure the image covers the entire viewport */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
+    
+}
+.h1{
+    color: white; 
+}
+.background {
+    background-image: url('aspire-africa.jpg'); /* Change to the image you want */
+    background-size: cover; /* Ensure the image covers the entire element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 100vh; /* Full height of the viewport */
+    color: white; /* Text color for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-/* Task Tracker Styles */
+
+
 .task-tracker {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three cards per row */
-    gap: 40px; /* Fixed gap between cards */
+    gap: 40px; /* Ensures a fixed gap between cards */
 }
+.task-tracker h1{
+    color: white; 
+}
+    
 
-/* Card Styles */
-.task-card1, .task-card2, .task-card3, .task-card4, .task-card5, .task-card6 {
+.task-card1 {
+    background:#E3F2FD;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+.task-card2 {
+    background:#FFEBEE;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+.task-card3 {
+    background: #E8F5E9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+.task-card4 {
+    background: #FFF9C4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+.task-card5 {
+    background:#FFCCBC;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+.task-card6 {
+    background:#D1C4E9;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -31,37 +91,16 @@ body {
     box-sizing: border-box; /* Ensures padding doesn't affect width */
 }
 
-.task-card1 {
-    background: #E3F2FD;
-}
 
-.task-card2 {
-    background: #FFEBEE;
-}
 
-.task-card3 {
-    background: #E8F5E9;
-}
 
-.task-card4 {
-    background: #FFF9C4;
-}
 
-.task-card5 {
-    background: #FFCCBC;
-}
 
-.task-card6 {
-    background: #D1C4E9;
-}
-
-/* Header Styles */
 h1 {
     text-align: center;
     grid-column: span 3; /* Span all columns for the header */
 }
 
-/* Form Styles */
 .task-form {
     display: flex;
     flex-direction: column;
@@ -107,7 +146,6 @@ button:hover {
     background-color: #388e3c;
 }
 
-/* Task List Styles */
 .task-list {
     list-style: none;
     padding: 0;
