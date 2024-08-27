@@ -1,42 +1,3 @@
-// Function to save tasks to local storage
-function saveTasks() {
-    document.querySelectorAll('.task-card').forEach((card, index) => {
-        const name = card.querySelector('.name-input').value;
-        const tasks = Array.from(card.querySelectorAll('.task-list li')).map(task => {
-            // Extracting task description from list item text
-            return task.textContent.split(' - ')[0].trim();
-        });
-        localStorage.setItem(`card-${index}-name`, name);
-        localStorage.setItem(`card-${index}-tasks`, JSON.stringify(tasks));
-    });
-}
-
-// Function to load tasks from local storage
-function loadTasks() {
-    document.querySelectorAll('.task-card').forEach((card, index) => {
-        const name = localStorage.getItem(`card-${index}-name`);
-        const tasks = JSON.parse(localStorage.getItem(`card-${index}-tasks`)) || [];
-        if (name) card.querySelector('.name-input').value = name;
-        const taskList = card.querySelector('.task-list');
-        taskList.innerHTML = ''; // Clear existing tasks to prevent duplicates
-        tasks.forEach(task => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${task} - ${name}`;
-            listItem.innerHTML += '<button class="remove-btn">Remove</button>';
-            taskList.appendChild(listItem);
-
-            // Add event listener for the remove button in each loaded task
-            listItem.querySelector('.remove-btn').addEventListener('click', function() {
-                taskList.removeChild(listItem);
-                saveTasks(); // Update local storage after removal
-            });
-        });
-    });
-}
-
-// Initialize
-loadTasks();
-
 // Event listener for form submissions
 document.querySelectorAll('.task-form').forEach(form => {
     form.addEventListener('submit', function(event) {
@@ -64,6 +25,8 @@ document.querySelectorAll('.task-form').forEach(form => {
         card.querySelector('.task-list').appendChild(listItem);
         saveTasks(); // Update local storage after adding a new task
 
+        // Clear input fields after submission
         this.querySelector('.task-input').value = '';
+        this.querySelector('.name-input').value = '';
     });
 });
